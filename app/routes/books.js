@@ -3,6 +3,7 @@ import Ember from 'ember';
 export default Ember.Route.extend({
   model() {
     return this.store.findAll('book');
+<<<<<<< HEAD
   },
 <<<<<<< HEAD
 =======
@@ -20,4 +21,7 @@ export default Ember.Route.extend({
   }
 
 >>>>>>> ppms-create-book
+=======
+  }
+>>>>>>> ppms-setup-firebase
 });
