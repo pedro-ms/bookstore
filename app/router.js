@@ -8,6 +8,11 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('books');
+
+  this.route('authors', function() {
+    this.route('new');
+    this.route('index');
+  });
 });
 
 export default Router;
