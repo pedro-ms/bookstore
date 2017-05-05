@@ -5,7 +5,7 @@ export default Ember.Route.extend({
     return this.store.findAll('book');
   },
 
-  actions{
+  actions: {
     saveBook(newBook) {
       newBook.save().then(() => this.transitionTo('books'));
     },
