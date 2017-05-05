@@ -1,1 +1,9 @@
-{{outlet}}
+<h2>List</h2>
+
+{{#each model as |author|}}
+  <div class="panel panel-default">
+    <div class="panel-heading">
+      <h3 class="panel-title">{{author.name}}</h3>
+    </div>
+  </div>
+{{/each}}
