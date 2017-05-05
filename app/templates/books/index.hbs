@@ -10,5 +10,8 @@
       <p>Author: {{book.author}}</p>
       <p>Publisher: {{book.publisher}}</p>
     </div>
+    <div class="panel-footer text-right">
+      {{#link-to 'books.view' book.id class='btn btn-success btn-xs'}}View{{/link-to}}
+    </div>
   </div>
 {{/each}}
