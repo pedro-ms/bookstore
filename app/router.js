@@ -17,6 +17,7 @@ Router.map(function() {
     this.route('new');
     this.route('index');
     this.route('view', { path: '/:author_id/view' });
+    this.route('edit', { path: '/:author_id/edit' });
   });
 });
 
