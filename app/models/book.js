@@ -4,7 +4,7 @@ import Ember from 'ember';
 export default DS.Model.extend({
   title: DS.attr('string'),
   price: DS.attr('number'),
-  author: DS.belongsTo('author'),
+  author: DS.belongsTo('author', { inverse: 'books' }),
   publisher: DS.attr('string'),
   
   isValidTitle: Ember.computed.notEmpty('title'),
