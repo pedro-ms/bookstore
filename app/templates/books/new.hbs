@@ -1,19 +1,21 @@
 <h2>Add a new Book</h2>
 
 <div class="form-horizontal">
-  <div class="form-group">
+  <div class="form-group has-feedback {{if model.book.isValidTitle 'has-success'}}">
     <label class="col-sm-2 control-label">Title</label>
     <div class="col-sm-10">
       {{input type="text" value=model.book.title class="form-control" placeholder="The name of the Book"}}
+      {{#if model.book.isValidTitle}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
     </div>
   </div>
-  <div class="form-group">
+  <div class="form-group has-feedback {{if model.book.isValidPrice 'has-success'}}">
     <label class="col-sm-2 control-label">Price</label>
     <div class="col-sm-10">
       {{input type="text" value=model.book.price class="form-control" placeholder="The price of the Book"}}
+      {{#if model.book.isValidPrice}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
     </div>
   </div>
-  <div class="form-group">
+  <div class="form-group has-feedback {{if model.book.isValidAuthor 'has-success'}}">
     <label class="col-sm-2 control-label">Author</label>
     <div class="col-sm-10">
       <select  class="form-control" onchange={{action "selectAuthor" value="target.value"}}>
@@ -25,18 +27,19 @@
             {{author.name}}
           </option>
         {{/each}}
-      </select>      
+      </select>
     </div>
   </div>
-  <div class="form-group">
+  <div class="form-group has-feedback {{if model.book.isValidPublisher 'has-success'}}">
     <label class="col-sm-2 control-label">Publisher</label>
     <div class="col-sm-10">
       {{input type="text" value=model.book.publisher class="form-control" placeholder="The publisher of the Book"}}
+      {{#if model.book.isValidPublisher}}<span class="glyphicon glyphicon-ok form-control-feedback"></span>{{/if}}
     </div>
   </div>
   <div class="form-group">
     <div class="col-sm-offset-2 col-sm-10">
-      <button type="submit" class="btn btn-default" {{action 'saveBook' model.book}}>Add Book</button>
+      <button type="submit" class="btn btn-default" {{action 'saveBook' model.book}} disabled="{{unless model.book.isValid 'disabled'}}">Add Book</button>
     </div>
   </div>
 </div>
